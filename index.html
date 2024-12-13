@@ -6,56 +6,136 @@
     <title>Spendly - Your Smart Budgeting App</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background: #f9f9f9;
+            color: #333;
         }
         header {
-            background: #4CAF50;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.8rem;
         }
         header a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        header a:hover {
+            color: #f1c40f;
         }
         .banner {
-            background: #f4f4f4;
+            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
             text-align: center;
-            padding: 50px 20px;
+            color: white;
+            padding: 100px 20px;
+            position: relative;
+        }
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .banner h1, .banner p, .banner button {
+            position: relative;
+            z-index: 2;
         }
         .banner h1 {
-            margin: 0;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
         .banner p {
-            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .banner button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background: #f1c40f;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .banner button:hover {
+            background: #d4ac0d;
         }
         .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 20px;
             padding: 20px;
-            background: #fff;
         }
         .feature {
-            flex: 1;
-            max-width: 300px;
-            margin: 10px;
+            background: white;
             padding: 20px;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .feature h2 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+        .cta {
+            text-align: center;
+            margin: 50px 20px;
+            padding: 40px 20px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .cta button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #f1c40f;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta button:hover {
+            background: #d4ac0d;
         }
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
+        }
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -71,23 +151,33 @@
 
     <section class="banner">
         <h1>Welcome to Spendly</h1>
-        <p>Take control of your finances with the smartest budgeting app made for everyone.</p>
-        <button onclick="alert('Coming Soon!')">Download the App</button>
+        <p>Empower your financial journey with Spendly. Budgeting made simple, effective, and fun!</p>
+        <button onclick="alert('App coming soon!')">Get Started</button>
     </section>
 
     <section id="features" class="features">
         <div class="feature">
             <h2>Track Expenses</h2>
-            <p>Monitor your spending automatically with advanced integration.</p>
+            <p>Seamlessly monitor and categorize your expenses with advanced tools.</p>
         </div>
         <div class="feature">
-            <h2>Set Savings Goals</h2>
-            <p>Save for your dreams with personalized plans and progress tracking.</p>
+            <h2>Set Goals</h2>
+            <p>Define your financial dreams and let Spendly guide you to achieve them.</p>
         </div>
         <div class="feature">
-            <h2>Invest Smartly</h2>
-            <p>Get curated investment recommendations tailored to your needs.</p>
+            <h2>Smart Investments</h2>
+            <p>Receive tailored investment advice to grow your wealth responsibly.</p>
         </div>
+        <div class="feature">
+            <h2>Interactive Insights</h2>
+            <p>Get real-time insights into your spending patterns and take control.</p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Join the Spendly Revolution!</h2>
+        <p>Take the first step toward smarter finances. Sign up now and be part of a growing community of financially empowered individuals.</p>
+        <button>Sign Up Now</button>
     </section>
 
     <footer>
