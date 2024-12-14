@@ -1,1 +1,1 @@
-# Spendly
+# Spendly Project
